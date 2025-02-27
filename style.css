@@ -26,7 +26,16 @@ body::before {
     backdrop-filter: blur(2px);
     z-index: -1;
 }
+/* Responsive Fixes */
+@media (max-width: 450px) {
+    .calculator {
+        width: 90%; /* ✅ Prevents extra space on small screens */
+    }
 
+    body {
+        background-size: cover; /* ✅ Ensure full-screen background */
+    }
+}
 
 .calculator {
     width: 380px;
