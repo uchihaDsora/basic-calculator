@@ -1,0 +1,135 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: url('background.gif') no-repeat center center/cover;
+    overflow: hidden;
+    position: relative;
+}
+
+body::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(2px);
+    z-index: -1;
+}
+
+
+.calculator {
+    width: 380px;
+    background: rgba(0, 0, 0, 0.85);
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0px 4px 15px rgba(255, 255, 255, 0.2);
+    position: relative;
+    text-align: center;
+}
+
+.theme-container {
+    display: flex;
+    justify-content: flex-end;
+    padding-bottom: 10px;
+}
+
+.toggle-mode {
+    width: 45px;
+    height: 45px;
+    font-size: 1.2em;
+    background: #444;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.toggle-mode:hover {
+    background: #666;
+}
+
+#display {
+    width: 100%;
+    height: 70px;
+    font-size: 2em;
+    text-align: right;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: none;
+    background: #222;
+    color: white;
+    border-radius: 8px;
+    outline: none;
+}
+
+.buttons {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+}
+
+.btn {
+    width: 100%;
+    height: 70px;
+    font-size: 1.5em;
+    border: none;
+    background: #333;
+    color: white;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.btn:hover {
+    background: #444;
+    transform: scale(1.05);
+}
+
+.equal {
+    grid-column: span 4;
+    background: #f39c12;
+}
+
+.equal:hover {
+    background: #e67e22;
+}
+
+body.light-mode {
+    background: white;
+    color: black;
+}
+
+.light-mode .calculator {
+    background: #ddd;
+}
+
+.light-mode .btn {
+    background: #f0f0f0;
+    color: black;
+}
+
+.light-mode .toggle-mode {
+    background: #bbb;
+}
+
+@media (max-width: 450px) {
+    .calculator {
+        width: 90%;
+    }
+
+    .btn {
+        height: 60px;
+        font-size: 1.3em;
+    }
+}
